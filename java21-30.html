@@ -1,0 +1,266 @@
+<html>
+    <head>
+
+    </head><body>
+        <h5>
+            class Prog21 {
+                public static void main(String args[]) {
+                    int n = Integer.parseInt(args[0]);
+                    switch (n) {
+                        case 1: System.out.println("Monday"); break;
+                        case 2: System.out.println("Tuesday"); break;
+                        case 3: System.out.println("Wednesday"); break;
+                        case 4: System.out.println("Thursday"); break;
+                        case 5: System.out.println("Friday"); break;
+                        case 6: System.out.println("Saturday"); break;
+                        case 7: System.out.println("Sunday"); break;
+                        default: System.out.println("Error: Invalid day"); break;
+                    }
+                }
+            }
+
+            
+
+///////////////////////
+
+            class Prog22 {
+                public static void main(String args[]) {
+                    System.out.println("Enter a character: ");
+                    char c = System.console().readLine().charAt(0);
+            
+                    switch (c) {
+                        case 'V': System.out.println("Violet"); break;
+                        case 'I': System.out.println("Indigo"); break;
+                        case 'B': System.out.println("Blue"); break;
+                        case 'G': System.out.println("Green"); break;
+                        case 'Y': System.out.println("Yellow"); break;
+                        case 'O': System.out.println("Orange"); break;
+                        case 'R': System.out.println("Red"); break;
+                        default: System.out.println("Not a valid color"); break;
+                    }
+                }
+            }
+
+
+////////////////
+
+            class Rect35 {
+                double length, width;
+            
+                double area() {
+                    return length * width;
+                }
+            }
+            
+            class Prog23 {
+                public static void main(String args[]) {
+                    Rect35 r = new Rect35();
+                    r.length = Double.parseDouble(args[0]);
+                    r.width = Double.parseDouble(args[1]);
+                    double ans = r.area();
+                    System.out.println("Area of rectangle = " + ans);
+                }
+            }
+
+   //////////////         
+
+
+            class Box35 {
+                double l, w, h;
+            
+                Box35() {
+                    this.l = 0;
+                    this.w = 0;
+                    this.h = 0;
+                }
+            
+                Box35(double ll, double ww, double hh) {
+                    this.l = ll;
+                    this.w = ww;
+                    this.h = hh;
+                }
+            
+                double vol() {
+                    return l * w * h;
+                }
+            }
+            
+            class Prog24 {
+                public static void main(String args[]) {
+                    Box35 b1 = new Box35();
+                    Box35 b2 = new Box35(10, 15, 20);
+            
+                    System.out.println("Volume 1 = " + b1.vol());
+                    System.out.println("Volume 2 = " + b2.vol());
+                }
+            }
+////////////////
+            
+            class Stud35 {
+                String cy;
+                int r;
+            
+                Stud35(String a, int b) {
+                    this.cy = a;
+                    this.r = b;
+                }
+            
+                void display() {
+                    System.out.println("Current Year = " + cy + ", Roll Number = " + r);
+                }
+            }
+            
+            class Prog25 {
+                public static void main(String args[]) {
+                    Stud35 s1 = new Stud35("SY", 35);
+                    Stud35 s2 = new Stud35("TY", 23);
+                    s1.display();
+                    s2.display();
+                }
+            }
+            //////////////////////////
+            class MathOperation {
+                public static float mul(float x, float y) {
+                    return x * y;
+                }
+            
+                public static float div(float x, float y) {
+                    return x / y;
+                }
+            }
+            
+            class Prog26 {
+                public static void main(String args[]) {
+                    float a = MathOperation.mul(4.3f, 5.7f);
+                    float b = MathOperation.div(a, 2);
+                    System.out.println("a = " + a);
+                    System.out.println("b = " + b);
+                }
+            }
+////////////////////////
+class Nesting {
+    int m, n;
+
+    Nesting(int x, int y) {
+        m = x;
+        n = y;
+    }
+
+    int largest() {
+        if (m > n)
+            return m;
+        else
+            return n;
+    }
+
+    void display() {
+        int large = largest();
+        System.out.println("Largest Number is " + large);
+    }
+}
+
+class Prog27 {
+    public static void main(String args[]) {
+        Nesting obj = new Nesting(70, 30);
+        obj.display();
+    }
+}
+/////////////////////
+class TestPerimeter {
+    double length, width;
+
+    TestPerimeter() {
+        this.length = 0;
+        this.width = 0;
+    }
+
+    TestPerimeter(double l, double w) {
+        this.length = l;
+        this.width = w;
+    }
+
+    double cal() {
+        return 2 * (length + width);
+    }
+}
+
+class Prog28 {
+    public static void main(String args[]) {
+        TestPerimeter p1 = new TestPerimeter();
+        TestPerimeter p2 = new TestPerimeter(10.5, 7.8);
+
+        System.out.println("Perimeter 1 = " + p1.cal());
+        System.out.println("Perimeter 2 = " + p2.cal());
+    }
+}
+//////////////////
+class TestOverload {
+    public static void add(int a, int b) {
+        System.out.println("Sum is " + (a + b));
+    }
+
+    public static void add(int a, int b, int c) {
+        System.out.println("Sum is " + (a + b + c));
+    }
+
+    public static void add(float x, float y) {
+        System.out.println("Sum is " + (x + y));
+    }
+
+    public static void add(float x, float y, float z) {
+        System.out.println("Sum is " + (x + y + z));
+    }
+}
+
+class Prog29 {
+    public static void main(String args[]) {
+        TestOverload.add(4, 5);
+        TestOverload.add(4, 5, 6);
+        TestOverload.add(7.1f, 8.1f);
+        TestOverload.add(7.1f, 8.1f, 9.1f);
+    }
+}
+////////////////////
+abstract class Shape {
+    double len, breadth, radius;
+    abstract double area();
+}
+
+class Rect extends Shape {
+    double area() {
+        return len * breadth;
+    }
+}
+
+class Circle extends Shape {
+    double area() {
+        return 3.142 * (radius * radius);
+    }
+}
+
+class Prog30 {
+    public static void main(String args[]) {
+        Rect r1 = new Rect();
+        r1.len = 79;
+        r1.breadth = 24;
+        double ar = r1.area();
+
+        Circle c1 = new Circle();
+        c1.radius = 63;
+        double ac = c1.area();
+
+        System.out.println("Area of Rectangle = " + ar);
+        System.out.println("Area of Circle = " + ac);
+    }
+}
+
+
+            
+
+
+
+
+            
+        </h5>
+    </body>
+</html>
